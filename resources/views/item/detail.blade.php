@@ -4,9 +4,6 @@
   <h1><small>商品詳細画面</small></h1>
   </div>
 
-<!--ヘッダー-->
-<!-- nav.blade.phpのテンプレート利用 -->
-
 <!--フォーム-->
 <div class="container mt-5 p-lg-5">
 <form action="" method="post">
@@ -52,16 +49,16 @@
 
 
   <!--更新日時-->
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">更新日時</label>
-    <div class="col-sm-10">{{$item->updated_at}}</div>
-</div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">更新日時</label>
+        <div class="col-sm-10">{{$item->updated_at}}</div>
+    </div>
 
 
     <!--ボタンブロック-->
-      <div class="row">
+    <div class="row">
         <div class="col-md">
-    <div class="form-group row mt-5">
+        <div class="form-group row mt-5">
         <div class="col-sm-12">
             <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
         </div>

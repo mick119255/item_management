@@ -48,5 +48,10 @@ Route::delete('/items/destroy{item}', [App\Http\Controllers\ItemController::clas
 //ユーザーマスター
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
 Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
-Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+Route::post('/user/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
 Route::post('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('delete');
+Route::get('/user/register', [App\Http\Controllers\UserController::class, 'register'])->name('register');
+Route::post('/user/register', [App\Http\Controllers\UserController::class, 'store'])->name('register.store');
+
+
+

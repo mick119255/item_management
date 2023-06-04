@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', '商品一覧')
+@section('title', '商品マスタ')
 
 @section('content_header')
     <h1><small>商品マスタ画面</small></h1>
@@ -11,8 +11,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">商品マスタ</h3>
-                      <div class="card-tools">
+                    <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
                                 <a href="{{ url('items/add') }}" class="btn btn-warning btn-lg">商品登録</a>
@@ -20,18 +19,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                        <thead>
-                            <tr>
+                <div class="table-responsive">
+                    <table class="table text-nowrap">
+                       <tr class="table-info">
                                 <th>ID</th>
                                 <th>名前</th>
                                 <th>種別№</th>
                                 <th>種別</th>
                                 <th>更新日時</th>
+                                <th></th>
+                                <th></th>
                             </tr>
-                        </thead>
-                        <tbody>
+                        
                             @foreach ($items as $item)
                                 <tr>
                                     <td>{{ $item->id }}</td>
@@ -51,7 +50,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
      @stop
 

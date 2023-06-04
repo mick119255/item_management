@@ -11,19 +11,21 @@
                 <p> 商品番号: {{$item->id}} </p>
                 <p> 登録日時: {{$item->created_at}} </p>
                 <p> 更新日時: {{$item->updated_at}} </p>
-                <label>
-                    {{-- 商品名
-                    <input class="form-control"  placeholder="商品名" type="text" name="name" value="{{ old('name', $item->name) }}"> --}}
+            
+            <div class="form-group"><label>
                     商品名 <span class="badge rounded-pill bg-danger">{{ __('必須') }}</span>
-                <input class="form-control" placeholder="商品名" type="text" name="name" value="{{ old('name', $item->name) }}">
-                </label>
+                    <input class="form-control" placeholder="商品名" type="text" name="name" value="{{ old('name', $item->name) }}">
+                </label></div>
                 @error('name')
                     <div class="error">{{ $message }}</div>
                 @enderror
-            </div>
+            </div>    
 
             <div class="form-group">
+                
                 <label for="type">{{ __('カテゴリー') }}<span class="badge rounded-pill bg-danger">{{ __('必須') }}</span></label>
+                <div class="row">
+                    <div class="col-xs-5">
                 <select class="form-control" id="type" name="type">>
                  <option value=""> -  カテゴリー </option>
                 <option value="1" @if(old('type',$item->type) == '1') selected @endif >1.トップス</option>
@@ -36,18 +38,24 @@
                 @error('type')
                 <div class="error">{{ $message }}</div>
                  @enderror
+                </div>
             </div>
+        </div>    
+
 
             <div class="form-group">
                 <label class="VareDetails">
                     商品詳細 <span class="badge rounded-pill bg-danger">{{ __('必須') }}</span>
                 </label>
-                    <textarea class="form-control" placeholder="商品詳細" name="detail" rows="2">{{ old('detail', $item->detail) }}</textarea>
+                <div class="row">
+                    <div class="col-5">
+                    <textarea class="form-control" placeholder="商品詳細" name="detail" rows="5">{{ old('detail', $item->detail) }}</textarea>
                     @error('detail')
                     <div class="error">{{ $message }}</div>
                     @enderror
+                </div>
             </div>
-
+        </div>
             <div class="form-button">
                 <button class="btn btn-success button-update">更新</button>
                 <button type="button" id="delete_button" class="btn btn-danger button-delete">削除</button>
