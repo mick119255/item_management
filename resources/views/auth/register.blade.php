@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('user.register') }}">
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -32,20 +32,6 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('権限') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="role" type="role" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role">
-
-                                @error('role')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -83,15 +69,6 @@
                             </div>
                         </div>
                     </form>
-                    <!--ボタンブロック-->
-                    <div class="row">
-                        <div class="col-md">
-                        <div class="form-group row mt-5">
-                        <div class="col-sm-12">
-                            <button type="button" class="btn btn-success" onclick="history.back()">戻る</button>
-                        </div>
-                    </div>
-<!--/ボタンブロック-->
                 </div>
             </div>
         </div>

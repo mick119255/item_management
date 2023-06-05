@@ -14,10 +14,10 @@
     <div class="col-5">
         <input type="text" name="keyword" class="form-control" value="" placeholder="検索キーワード" aria-label="検索キーワード" aria-describedby="basic-addon1">
     </div>
-    <div class="col-3">
+    <div class="col-4 input-group">
               <select name="type" class="form-control" id="rank" >
           
-          <option selected>選択してください</option>
+          <option selected>カテゴリー選択</option>
                 <option value="1">トップス</option>
                 <option value="2">ボトムス</option>
                 <option value="3">アウター</option>
@@ -25,11 +25,10 @@
                 <option value="5">アクセサリー</option>
                 <option value="6">その他</option>
         </select>
-    </div>  
-    
-    
-        <div class="col-2" ><input type="submit" value="検索" class="btn btn-info" style="color:white;"></div>
-        <div class="col-2" ><a href="/" class="btn btn-info" style="color:white width: 120%; padding: 8%;" >リセット</a></div> 
+        <button type="submit"  class="btn btn-info btn-outline-secondary" style="color:white; "  >検索</button>
+            
+    </div>
+        <div class="col-3" ><a href="/" class="btn btn-info" style="color:white; " >リセット</a></div> 
     
     </div> 
     </form>

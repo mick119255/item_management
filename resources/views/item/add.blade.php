@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="type">種別</label>
+                            <label for="type">カテゴリー</label>
                             <select name="type" id="type" class="form-control"> 
                                 @foreach (App\Models\Item::TYPES as $key => $value )
                                     <option value="{{$key}}">{{$value}}</option>
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="detail">詳細</label>
+                            <label for="detail">商品詳細</label>
                             <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
                         </div>
                     </div>

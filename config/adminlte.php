@@ -223,6 +223,8 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
     |
     */
+    
+    
 
     'menu' => [
         [
@@ -230,19 +232,23 @@ return [
             'url'  => '/',
             'icon' => 'fas fa-gamepad',
         ],
+     
         [
             'text' => '商品マスタ',
             'url'  => 'items',
             'icon' => 'fas fa-gamepad',
+            'can' => ['isAdmin'],
         ],
         [
             'text' => 'ユーザー管理',
             'url'  => '/user',
             'icon' => 'fas fa-gamepad',
+            'can' => ['isAdmin'],
         ],
+     
         [
             'text' => 'ログアウト',
-            'url'  => 'login',
+            'url'  => '/logout',
             'icon' => 'fas fa-gamepad',
         ],
        

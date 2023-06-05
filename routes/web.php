@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -26,8 +27,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 //商品登録
 Route::prefix('items')->group(function () {
-    Route::get('/', [App\Http\Controllers\ItemController::class, 'index'])->name('items');
-    Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
+    Route::get('/', [App\Http\Controllers\ItemController::class, 'index'])->name('items')->middleware(['auth', 'isAdmin']);
+    Route::get('/add', [App\Http\Controllers\ItemController::class, 'add'])->middleware(['auth', 'isAdmin']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
 });
 
@@ -46,12 +47,12 @@ Route::delete('/items/destroy{item}', [App\Http\Controllers\ItemController::clas
 
 
 //ユーザーマスター
-Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index')->middleware(['auth', 'isAdmin']);
 Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
 Route::post('/user/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
 Route::post('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('delete');
-Route::get('/user/register', [App\Http\Controllers\UserController::class, 'register'])->name('register');
+Route::get('/user/register', [App\Http\Controllers\UserController::class, 'register'])->name('user.register');
 Route::post('/user/register', [App\Http\Controllers\UserController::class, 'store'])->name('register.store');
 
 
-
+Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout']);

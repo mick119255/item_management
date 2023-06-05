@@ -46,6 +46,11 @@ class User extends Authenticatable
         public function posts(){
         return $this->hazMany('App\Models\Items');
         }
+
+
+public function roles(){ 
+return $this->belongsToMany('\App\Models\Role')->withTimestamps();
+}
     }
 
 
