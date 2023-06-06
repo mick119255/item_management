@@ -5,7 +5,6 @@
 @section('content_header')
     <h1><small>商品マスタ画面</small></h1>
 @stop
-
 @section('content')
     <div class="row">
         <div class="col-12">
