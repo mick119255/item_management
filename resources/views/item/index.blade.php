@@ -21,8 +21,8 @@
                 <div class="table-responsive">
                     <table class="table text-nowrap">
                        <tr class="table-info">
-                                <th>ID</th>
-                                <th>名前</th>
+                                <th>商品番号</th>
+                                <th>商品名</th>
                                 <th>種別№</th>
                                 <th>種別</th>
                                 <th>更新日時</th>
