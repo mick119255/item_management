@@ -23,8 +23,7 @@
                        <tr class="table-info">
                                 <th>商品番号</th>
                                 <th>商品名</th>
-                                <th>種別№</th>
-                                <th>種別</th>
+                                <th>カテゴリー</th>
                                 <th>更新日時</th>
                                 <th></th>
                                 <th></th>
@@ -34,7 +33,6 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
                                     <td>{{ $item->type == 1 ? "トップス" : ($item->type == 2 ? "ボトムス" : ( $item->type == 3 ? "アウター" : ($item->type == 4 ? "インナー" : ( $item->type == 5 ? "アクセサリー" : "その他" ))))}}</td>
                                     <td>{{ $item->updated_at }}</td>
                                     <td><a href="detail/{{$item->id}}"><button type="button" class="btn btn-success">詳細</button></a></td>
