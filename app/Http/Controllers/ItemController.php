@@ -22,12 +22,12 @@ class ItemController extends Controller
      * 商品一覧
      */
     public function index()
-    {
-    
-        //クエリ生成
+{
+
+    //クエリ生成
     $query = Item::query();
     $query ->where('items.status', 'active');
-
+        
       // 全件取得 +ページネーション
      $items = $query->orderBy('updated_at','desc')->paginate(10);
      return view('item.index')->with('items',$items);
@@ -78,18 +78,18 @@ class ItemController extends Controller
      */
     public function edit_index($id)
     {
-        $item = \App\Item::findOrFail($id);
+        $item = \App\Models\Item::findOrFail($id);
         return view('item.edit_index')->with('item',$item);
     }
 
-    /**
-     * 編集画面（確認）
-     */
-    public function edit_confirm(\App\Http\Requests\ValiCrudRequest $req)
-    {
-        $data = $req->all();
-        return view('item.edit_confirm')->with($data);
-    }
+    // /**
+    //  * 編集画面（確認）
+    //  */
+    // public function edit_confirm(\App\Http\Requests\ValiCrudRequest $req)
+    // {
+    //     $data = $req->all();
+    //     return view('item.edit_confirm')->with($data);
+    // }
 
     /**
      * 編集画面（完了）
@@ -97,7 +97,7 @@ class ItemController extends Controller
     public function edit_finish(Request $request, $id)
     {
         //該当レコードを抽出
-        $item = \App\Item::findOrFail($id);
+        $item = \App\Models\Item::findOrFail($id);
 
         //値を代入
         $item->name = $request->name;
@@ -118,7 +118,7 @@ class ItemController extends Controller
 public function us_delete($id)
 {
     // 削除対象レコードを検索
-    $item = \App\Item::find($id);
+    $item = \App\Models\Item::find($id);
     // 削除
     $item->delete();
     // リダイレクト
