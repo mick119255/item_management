@@ -4,6 +4,33 @@
 
 @section('content_header')
     <h1><small>商品マスタ画面</small></h1>
+
+    <!-- 検索フォーム -->
+<div class="container mt-5">
+    <form method="get" action="" class="form-inline" >
+    <div class="row mb-3"> 
+    <div class="col-5">
+        <input type="text" name="keyword" class="form-control" value="" placeholder="検索キーワード" aria-label="検索キーワード" aria-describedby="basic-addon1">
+    </div>
+    <div class="col-4 input-group">
+              <select name="type" class="form-control" id="rank" >
+          
+          <option selected>カテゴリー選択</option>
+                <option value="1">トップス</option>
+                <option value="2">ボトムス</option>
+                <option value="3">アウター</option>
+                <option value="4">インナー</option>
+                <option value="5">アクセサリー</option>
+                <option value="6">その他</option>
+        </select>
+        <button type="submit"  class="btn btn-info btn-outline-secondary" style="color:white; "  >検索</button>
+            
+    </div>
+        <div class="col-3" ><a href="/" class="btn btn-info" style="color:white; " >リセット</a></div> 
+    
+    </div> 
+    </form>
+</div>
 @stop
 @section('content')
     <div class="row">
