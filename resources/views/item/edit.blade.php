@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('content')
 
-        <h1><small>商品編集(管理者のみ)</small></h1>
+        <h1><small>商品編集･削除画面</small></h1>
         <form method="post" action="{{ route('items.update',$item) }}">
             @method('PATCH')
             @csrf

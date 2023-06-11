@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('content')
 
-        <h1><small>ユーザー管理(管理者のみ)</small></h1>
+        <h1><small>ユーザー情報編集・削除画面</small></h1>
         <form method="post" action="{{ route('user.update',$user) }}">
             @method('post')
             @csrf
@@ -9,7 +9,7 @@
             
             <div class="form-group">
                 <p> </p>
-                <p> ユーザーID: {{$user->id}} </p>
+                <p> 登録ID: {{$user->id}} </p>
                 <p> 登録日時: {{$user->created_at}} </p>
                 <p> 更新日時: {{$user->updated_at}} </p>
             <div>

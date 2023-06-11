@@ -23,7 +23,7 @@
                     <table class="table text-nowrap">
                        <tr class="table-info">
                                 <th scope="col" width="10%">登録ID</th>
-                                <th scope="col" width="25%">名前</th>
+                                <th scope="col" width="25%">氏名</th>
                                 <th scope="col" width="10%">権限</th>
                                 <th scope="col" width="25%">メールアドレス</th>
                                 <th scope="col" width="20%">登録日時</th>
