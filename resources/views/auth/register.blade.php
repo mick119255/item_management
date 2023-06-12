@@ -68,6 +68,13 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md">
+                            <div class="form-group row mt-5">
+                            <div class="col-sm-12">
+                                <button type="button" class="btn btn-success" onclick="history.back()">戻る</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
