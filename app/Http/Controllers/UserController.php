@@ -34,7 +34,7 @@ class UserController extends Controller
         //データを更新 
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => "required|string|email|max:255|unique:users,email,$request->id",
             'role' => 'required|string|min:1',
         ]);
         //dd($request);
@@ -44,7 +44,7 @@ class UserController extends Controller
         $user->email =$request->email;
         $user->save();
 
-        return redirect('/user')->with('message','削除しました。');
+        return redirect('/user');
     }
 
     
