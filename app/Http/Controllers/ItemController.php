@@ -145,9 +145,16 @@ public function edit(Item $item)
 return view('item.edit')
     ->with(['item' => $item]);
 }
+
+
 public function update(Request $request, Item $item)
 {
-
+    $request->validate([
+        'name' => 'required',
+        'type' => 'required',
+        'detail' => 'required',
+ ]);
+ 
 $item->name = $request->name;
 $item->type = $request->type;
 $item->detail = $request->detail;

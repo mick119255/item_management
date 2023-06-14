@@ -32,6 +32,11 @@ class UserController extends Controller
 
     public function update(Request $request){
         //データを更新 
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'role' => 'required|string|min:1',
+        ]);
         //dd($request);
         $user=User::find($request->id);
         $user->name =$request->name;
@@ -39,7 +44,7 @@ class UserController extends Controller
         $user->email =$request->email;
         $user->save();
 
-        return redirect('/user');
+        return redirect('/user')->with('message','削除しました。');
     }
 
     
@@ -64,8 +69,7 @@ class UserController extends Controller
             'role' => 'required|string|min:1',
             'password' => 'required|string|min:8|confirmed',
         ]);
-
-        $user = new User([
+      $user = new User([
             'name' => $request->name,
             'email' => $request->email,
             'role' => $request->role,

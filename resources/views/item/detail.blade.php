@@ -60,7 +60,7 @@
         <div class="col-md">
         <div class="form-group row mt-5">
         <div class="col-sm-12">
-            <button type="button" class="btn btn-primary" onclick="history.back()">戻る</button>
+            <a class="btn btn-primary" href="{{ route('items') }}">戻る</a>
         </div>
     </div>
     <!--/ボタンブロック-->

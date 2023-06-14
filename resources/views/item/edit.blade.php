@@ -60,7 +60,8 @@
                 <button class="btn btn-success button-update">更新</button>
                 <button type="button" id="delete_button" class="btn btn-danger button-delete">削除</button>
                 {{-- <a href="{{ route('items') }}" class="btn btn-warning button-back"> 戻る</a> --}}
-                <a id="btn--back" class="btn btn-primary button-back"> 戻る</a>
+                <a class="btn btn-primary" href="{{ route('items') }}">戻る</a>
+      
             </div>
         </form>
         <form id="delete_post" method="post" action="{{ route('items.destroy', $item)}}">

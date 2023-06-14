@@ -41,9 +41,8 @@
             <div class="form-button">
                 <button class="btn btn-success button-update">更新</button>
                 <button type="button" id="delete_button" class="btn btn-danger button-delete">削除</button>
-                <a id="btn--back" class="btn btn-primary button-back"> 戻る</a>
+                <a class="btn btn-primary" href="{{ route('user.index') }}">戻る</a>
             </div>
-        </form>
         <form id="delete_post" method="post" action="{{ route('delete', $user)}}">
           @csrf
          </form>

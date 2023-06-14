@@ -56,3 +56,4 @@ Route::post('/user/register', [App\Http\Controllers\UserController::class, 'stor
 
 
 Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout']);
+Route::get('auth/password/login', [App\Http\Controllers\UserController::class, 'login']);
